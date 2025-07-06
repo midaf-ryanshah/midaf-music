@@ -71,30 +71,30 @@
         .border-left { top: 34px; left: 20px; width: 3px; height: calc(100% - 79px); }
         .border-right { top: 34px; right: 20px; width: 3px; height: calc(100% - 79px); }
 
-        .logo-area { position: absolute; top: 15px; left: 50%; transform: translateX(-50%); width: 180px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: 800; z-index: 20; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); font-family: 'Roboto', sans-serif; font-size: 41px; }
+        /* --- CHANGE: Styles for image logo container --- */
+        .logo-area { 
+            position: absolute; 
+            top: 15px; /* Adjusted positioning slightly */
+            left: 50%; 
+            transform: translateX(-50%); 
+            width: 109px; /* Set to desired display width */
+            height: 50px; /* Set to desired display height */
+            z-index: 20; 
+        }
+
+        /* --- CHANGE: Style for the logo image itself --- */
+        .logo-area img {
+            width: 100%; /* Make image fill the container */
+            height: auto; /* Maintain aspect ratio */
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6)); /* Add a glow effect to the image */
+        }
+
         .music-button { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, #a88a2c, #d4af37); color: #0a0a0a; border: 1px solid rgba(212, 175, 55, 0.5); padding: 12px 35px; font-size: 16px; font-weight: bold; letter-spacing: 3px; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; z-index: 20; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2); }
         .music-button:hover { transform: translateX(-50%) translateY(-2px); background: linear-gradient(45deg, #d4af37, #f4d03f); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3); }
         #three-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; }
         #loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 18px; z-index: 30; }
 
-        #cookie-banner {
-            position: fixed;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            color: #ccc;
-            padding: 15px;
-            text-align: center;
-            z-index: 1000;
-            font-size: 14px;
-            transition: bottom 0.5s ease-in-out;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        #cookie-banner { position: fixed; bottom: -100%; left: 0; width: 100%; background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); color: #ccc; padding: 15px; text-align: center; z-index: 1000; font-size: 14px; transition: bottom 0.5s ease-in-out; display: flex; justify-content: center; align-items: center; }
         #cookie-banner.visible { bottom: 0; }
         #cookie-banner p { margin: 0 15px 0 0; }
         #cookie-banner button { background: #d4af37; color: #0a0a0a; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background 0.3s; }
@@ -102,7 +102,11 @@
 
         @media (max-width: 768px) {
             .border-top-left, .border-top-right, .border-bottom-left, .border-bottom-right { width: calc(50% - 80px); }
-            .logo-area { width: 140px; font-size: 37px; top: 20px; }
+            .logo-area { 
+                width: 90px; /* Smaller logo on mobile */
+                height: auto;
+                top: 25px; 
+            }
             .music-button { padding: 10px 25px; font-size: 14px; bottom: 22px; }
             #cookie-banner { flex-direction: column; }
             #cookie-banner p { margin: 0 0 10px 0; }
@@ -118,7 +122,11 @@
     <div class="border border-left"></div>
     <div class="border border-right"></div>
 
-    <div class="logo-area"> MID AF </div>
+    <!-- --- CHANGE: Replaced text div with an image logo --- -->
+    <div class="logo-area">
+        <img src="assets/logo.png" alt="Mid AF Band Logo">
+    </div>
+
     <div id="loading">LOADING...</div>
     <canvas id="three-canvas"></canvas>
     <button class="music-button">???</button>
@@ -138,6 +146,7 @@
     </script>
 
     <script type="module">
+        // The JavaScript part remains unchanged.
         import * as THREE from 'three';
         import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
