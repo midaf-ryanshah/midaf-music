@@ -71,22 +71,20 @@
         .border-left { top: 34px; left: 20px; width: 3px; height: calc(100% - 79px); }
         .border-right { top: 34px; right: 20px; width: 3px; height: calc(100% - 79px); }
 
-        /* --- CHANGE: Styles for image logo container --- */
         .logo-area { 
             position: absolute; 
-            top: 15px; /* Adjusted positioning slightly */
+            top: 15px;
             left: 50%; 
             transform: translateX(-50%); 
-            width: 109px; /* Set to desired display width */
-            height: 50px; /* Set to desired display height */
+            width: 109px;
+            height: 50px; 
             z-index: 20; 
         }
 
-        /* --- CHANGE: Style for the logo image itself --- */
         .logo-area img {
-            width: 100%; /* Make image fill the container */
-            height: auto; /* Maintain aspect ratio */
-            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6)); /* Add a glow effect to the image */
+            width: 100%;
+            height: auto; 
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
         }
 
         .music-button { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, #a88a2c, #d4af37); color: #0a0a0a; border: 1px solid rgba(212, 175, 55, 0.5); padding: 12px 35px; font-size: 16px; font-weight: bold; letter-spacing: 3px; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; z-index: 20; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2); }
@@ -121,8 +119,6 @@
     <div class="border border-bottom-right"></div>
     <div class="border border-left"></div>
     <div class="border border-right"></div>
-
-    <!-- --- CHANGE: Replaced text div with an image logo --- -->
     <div class="logo-area">
         <img src="assets/logo.png" alt="Mid AF Band Logo">
     </div>
